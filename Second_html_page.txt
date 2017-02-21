@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <meta name="format-detection" content="telephone=no">
+        <!-- <meta name="msapplication-tap-highlight" content="no">-->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="assets_www/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.css">
+        <link rel="stylesheet" href="assets_www/css/font-awesome.min.css"> 
+      
+        <style type="text/css">
+            @media screen and (min-width: 768px){
+                .navbar-toggle{
+                    display: block !important;
+                }
+            }
+            #sidebar{
+                width:190px;
+                float:left;
+                padding-left:0px;
+                padding-right:0px;
+                position:static;
+
+            }
+
+            @media only screen and (max-width: 1100px){
+                #sidebar{
+                    border-style:solid;
+                    border-color:#ccc;
+                    border-width:0 1px 1px 0;
+                    border-top-color:#d6d6d6;
+                    z-index:1027 !important;
+                    position:relative;
+                    bottom:auto;
+                    left:190px;
+                    margin-left:-190px;
+                    overflow:visible;
+                    max-height:2000px;
+                    box-shadow: 2px 1px 2px 0 rgba(0,0,0,.15);
+                    transition: transform .2s linear 0s,max-height 0s linear .2s;
+                }
+            }
+            #work_area{
+                background-color: white;
+                position:absolute;
+                top: 0px;
+                bottom: 0px;
+            }
+            .nav-list>li{
+                display: block;
+                position: relative;
+                float: none;
+                padding: 0;
+                border-style: solid;
+                border-width: 1px 0 0;
+                border-color:#e5e5e5;
+            }
+
+            .nav-list>li.active:after{
+                display: block;
+                content: "";
+                position: absolute;
+                right: -2px;
+                /* top: -1px; */
+                bottom: 0;
+                z-index: 1;
+                border: 2px solid;
+                border-width: 0 2px 0 0;
+                border-color: #2b7dbc;
+            }
+            .nav-list>li
+            {
+                color:#428bca;
+                background-color: white;
+                position: relative;
+                display: block;
+                padding: 10px 15px;
+                text-decoration: none;
+                box-sizing: border-box;
+
+            }
+
+            .salutation{
+                width:90px !important;
+                background-color: #FFFFFF !important;
+                color:black !important;
+            }
+            select.salutation:hover,select.salutation:focus{
+                background-color: #FFFFFF !important;
+                color:black !important;
+            }
+            a {
+                background-color: white;
+            }
+            /*.btn-primary {
+                background: #0099cc;
+                color: #ffffff;
+            }*/
+
+            .btn-primary.raised:active, .btn-primary.raised.active {
+                background: #33a6cc;
+                box-shadow: none;
+                margin-bottom: -3px;
+                margin-top: 3px;
+            }
+
+        </style>
+    </head>
+    <body style="padding:0">
+        <div id="work_area" class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding:0">
+            <div class="top_container">
+                <div id="navbar" class="navbar navbar-default">
+                    <div class="navbar-container" id="navbar-container">
+                        <div class="navbar-header pull-left">
+                            <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+                                <span class="sr-only">Toggle sidebar</span>
+
+                                <span class="icon-bar"></span>
+
+                                <span class="icon-bar"></span>
+
+                                <span class="icon-bar"></span>
+                            </button>
+                           
+                        </div>
+                    </div>
+                </div>    
+            </div>
+            <div class="body_container" style="margin-top:-20px">
+                <div id="sidebar" class="sidebar responsive">
+                    <div class="sidebar-shortcuts" id="sidebar-shortcuts">
+                        <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
+                        </div>
+                    </div><!-- short cuts end -->
+                    <ul class="nav nav-list">
+                        <li class="dropdown-toggle" onclick=" location.href = 'Top.html';"><i class="fa fa-user" aria-hidden="true"> New Account</i>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="dropdown-toggle" onclick="window.open('upload.html');return false;"> <i class="fa fa-upload" aria-hidden="true"> Upload</i>
+                            <b class="arrow"></b>
+                        </li>
+                        <li class="dropdown-toggle" onclick="logout();return false;"> <i class="fa fa-sign-out" aria-hidden="true"> Signout</i>
+                            <b class="arrow"></b>
+                        </li>
+                    </ul><!-- /.nav-list -->
+                </div>
+                <!-- Side Bar Ends -->
+                <div class="closest_div main-content"  style="">
+                    <div class=" Account_information">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">Saved Customer Details List</div>
+                                <div class="panel-body" style="overflow:scroll">
+                                    <div class="row">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>#</th>
+                                                    <th>Name</th>
+                                                    <th>Mobile Number</th>
+                                                    <th>Zip</th>
+                                                    <th>Action</th>
+                                                </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_container">
+
+            </div>
+            <!-- End Footer content -->
+        </div>
+      
+      
+        <script type="text/javascript" charset="utf-8" src="js/jquery-1.11.3.min.js"></script>
+     
+        <script type="text/javascript" src="cordova.js"></script> 
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="js/SQLitePlugin.js"></script>
+      
+      
+        <script>
+                                    
+                                    $(".menu-toggler").on("click", function () {
+                                        //alert("menutoggler");
+                                        $("#sidebar").toggle("slow");
+                                    });
+                                    $(".menu-toggler").trigger("click");
+                                    $(".main-content").on("click", function () {
+                                        if ($('#sidebar').css('display') == 'block') {
+                                            $(".menu-toggler").trigger("click");
+                                        }
+                                    });
+
+                          
+                                    function logout() {
+                                       
+                                        navigator.app.exitApp();
+                                    }
+
+        </script>
+
+
+    </body>
+</html>
